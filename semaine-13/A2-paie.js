@@ -22,3 +22,5 @@ La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+

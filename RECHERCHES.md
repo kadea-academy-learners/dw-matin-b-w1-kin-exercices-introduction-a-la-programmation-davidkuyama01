@@ -10,18 +10,30 @@
 **Question :** Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+typeof null renvoie "objet" à cause d'un comportement historique de javaScript pour assurer
+la comptabilité avec les anciens programmes.Pourtant, null représente l'absence volontaire de
+valeur et n'est pas un objet. c'est une particularité du langage qu'il faut connaître.Pour vérifier si une valeur est exactement null,
+on peut utiliser valeur === null, typeof null renvoie "object", mais cela ne veut pas dire que null est réellement un objet.
 
 ...
 
 **Mon test dans la console :**
+console.log(typeof null);
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
+console.log(typeof null);
+résultat : "object"
+
 ```
 
 **Source :** 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée : chatGPT
+Prompt : Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
+vérification MDN : null représente l'absence volontaire de
+valeur et n'est pas un objet.
 
 ## F2 — Le convertisseur de saisie
 

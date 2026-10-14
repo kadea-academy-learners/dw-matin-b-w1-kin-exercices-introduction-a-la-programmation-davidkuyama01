@@ -22,3 +22,5 @@ Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utili
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 
+
+
