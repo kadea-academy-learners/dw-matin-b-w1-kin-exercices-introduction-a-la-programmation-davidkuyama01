@@ -57,6 +57,7 @@ console.log(isNaN('abc'));  = true
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/NaN
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 oui claude
@@ -76,16 +77,17 @@ Le test n % 2 !== o focntionne pour tous les entiers : un nombre impair a toujou
 ...
 
 **Mon test dans la console :**
-console.log(-7 % 2);
-console.log(-7 % 2 === 1);
-console.log(-7 % 2 !== 0);
-console.log(-7 % 2 !== 0);
+console.log(-7 % 2);    resultat = -1
+console.log(-7 % 2 === 1); resultat = false
+console.log(-7 % 2 !== 0);  resultat = true 
+console.log(-7 % 2 !== 0);   resultat = true
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remainder
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée ? oui claude
@@ -97,18 +99,28 @@ vérification: c'est la même réponse sur mdn
 **Question :** Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+Oui, on peut enchaîner plusieurs ternaires : si la condition est fausse, on met un autre ternaire à la place de la valeur "sinon".
+Cela revient à écrire une suite de if / else if.
+C'est souvent déconseillé car le code devient vite difficile à lire, à déboguer et à modifier.
+Quand il y a plus de deux cas, mieux vaut utiliser if / else if ou switch.
 ...
 
 **Mon test dans la console :**
+const age = 15;
+const categorie = age < 12 ? 'enfant' : age < 18 ? 'ado' : 'adulte';
+console.log(categorie);
+résultat = ado
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt :  Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
 
 ## F5 — Ma première fonction fléchée
 
