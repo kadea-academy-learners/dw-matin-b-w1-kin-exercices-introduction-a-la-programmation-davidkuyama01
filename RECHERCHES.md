@@ -127,18 +127,36 @@ prompt :  Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déco
 **Question :** Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on enlever return et les accolades ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+On peut enlever les parenthèses autour du paramètre quand il y en a un seul : x => x * 2.
+Avec zéro paramètre ou plusieurs, les parenthèses restent obligatoires : () => 5 ou (a, b) => a + b.
+On peut enlever les accolades et return quand la fonction ne contient qu'une seule expression : la valeur est alors renvoyée automatiquement.
+Si on utilise des accolades, il faut écrire return soi-même.
 ...
 
 **Mon test dans la console :**
+const double = x => x * 2;
+const somme = (a, b) => a + b;
+const avecAccolades = (a, b) => {
+  return a + b;
+};
+
+console.log(double(4));  resultat : 8
+console.log(somme(2, 3)); resultat : 5
+console.log(avecAccolades(2, 3)); resultat : 5
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utlisée ? oui claude
+prompt :  Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on enlever return et les accolades ?
+ vérification sur MDN : même réponse
+
+
 
 ## F6 — Le compte à rebours
 
