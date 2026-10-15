@@ -163,18 +163,37 @@ prompt :  Quand peut-on enlever les parenthèses autour des paramètres, et quan
 **Question :** À quoi sert le mot-clé continue ? Quelle différence avec break ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+continue sert à sauter le tour actuel de la boucle et à passer directement au tour suivant.
+break arrête complètement la boucle, il n'y a plus de tour après.
+Avec continue, la boucle continue de tourner. Avec break, elle s'arrête.
 
 ...
 
 **Mon test dans la console :**
+for (let i = 1; i <= 3; i++) {
+  if (i === 2) continue;
+  console.log(i);
+}
+resultat : 1, 3
 
+for (let i = 1; i <= 3; i++) {
+  if (i === 2) break;
+  console.log(i);
+}
+resultat : 1
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/continue
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/break
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt : À quoi sert le mot-clé continue ? Quelle différence avec break ?
+ vérification sur MDN : réponse identique
+
 
 ## M1 — FizzBuzz kinois
 
