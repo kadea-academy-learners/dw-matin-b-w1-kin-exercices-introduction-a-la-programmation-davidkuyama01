@@ -19,5 +19,36 @@ Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt 
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
+const numeroTicket = 17;
+
+if(numeroTicket % 2 === 0) {
+    console.log("ticket 17 : pair , tu as gagné un tote bag");
+} else {
+    console.log("Ticket 17 : impair, tu gagné un stylo");
+}
+  
+
+// === test avec 24 === 
+
+
+
+if (numeroTicket % 2 === 0) {
+      numeroTicket = 24;
+    console.log("ticket 24 : pair , tu as gagné un tote bag");
+   
+
+    } else {
+        console.log("ticket 24 : impair , tu as gagné un stylo");
+    }
+
+    // === test avec 0 ===
+if (numeroTicket % 2 === 0) {
+    numeroTicket = 0;
+    console.log("ticket 0 : pair , tu as gagné un tote bag");
+} else {
+    console.log("ticket 0 : impair , tu gagné un stylo");
+   
+}
+
 
 

@@ -68,10 +68,18 @@ vérification : c'est la même chose
 **Question :** Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+-7 % 2 renvoie -1. L'opérateur % donne le reste de la division et le resultat prend le signe du premier (ici -7).
+Donc pour nombre impair négatif , le reste est -1 et non 1.
+Le test n % 2 === 1 échoue pour -7 alors qu'il est bien impair .
+Le test n % 2 !== o focntionne pour tous les entiers : un nombre impair a toujours un reste différent de 0 (1 ou -1) .
 
 ...
 
 **Mon test dans la console :**
+console.log(-7 % 2);
+console.log(-7 % 2 === 1);
+console.log(-7 % 2 !== 0);
+console.log(-7 % 2 !== 0);
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
@@ -80,6 +88,9 @@ vérification : c'est la même chose
 **Source :** 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt : Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair.
+vérification: c'est la même réponse sur mdn
 
 ## F4 — Le contrôleur du bus
 
