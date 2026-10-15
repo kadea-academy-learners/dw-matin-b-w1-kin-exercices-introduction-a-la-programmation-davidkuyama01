@@ -40,10 +40,17 @@ valeur et n'est pas un objet.
 **Question :** Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+NaN(Not-A-Number) est une propriéte de l'objet global qui répresente une valeur et pas un nombre. Elle est produite quand une oprération arithmétique donne un résultat indéfini ou non représentable.
+pourquoi NaN === NaN renvoie false? les opérateurs d'égalité considèrent que NaN n'est oas égale à elle-même.
+La fonction pour la détecter est Number.isNaN(valeur): renvoie true uniquement si la valeur est NaN, sans conversion. C'est la methode recommandée.
 
 ...
 
 **Mon test dans la console :**
+console.log(NaN === NaN);  = false
+console.log(Number.isNaN(NaN));   = true 
+console.log(Number.isNaN('abc')); = false
+console.log(isNaN('abc'));  = true
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
@@ -52,6 +59,9 @@ valeur et n'est pas un objet.
 **Source :** 
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+oui claude
+prompt : Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
+vérification : c'est la même chose
 
 ## F3 — Pair ou impair : le tirage des tickets
 
