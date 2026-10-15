@@ -297,18 +297,32 @@ vérifié sur MDN
 **Question :** Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de || ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+L'opérateur ?? renvoie la valeur de droite seulement si la valeur de gauche est null ou undefined.
+L'opérateur || renvoie la valeur de droite si la valeur de gauche est falsy (0, "", false, NaN, null, undefined).
+La différence : avec ||, un score de 0 est remplacé par la valeur par défaut, alors qu'avec ?? le 0 est gardé.
+?? est donc plus précis quand 0 ou "" sont des valeurs valides.
 ...
 
 **Mon test dans la console :**
+const score = 0;
+
+console.log(score || 10);  // 10 (0 est falsy, donc remplacé)
+console.log(score ?? 10);  // 0  (0 n'est ni null ni undefined, donc gardé)
+
+console.log(null ?? 10);       resultat : 10
+console.log(undefined ?? 10);  resultat : 10
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude comme IA
+prompt : Que fait l'opérateur ?? (coalescence des nuls) et en quoi est-il différent de || ?
+vérification : vérifié sur MDN
 
 ## M5 — La vitre teintée (portée de bloc)
 
