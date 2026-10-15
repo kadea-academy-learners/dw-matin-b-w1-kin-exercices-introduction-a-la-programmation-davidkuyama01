@@ -267,18 +267,30 @@ vérifié sur MDN
 **Question :** Quelle est la liste complète des valeurs falsy en JavaScript ? (Indice : il y en a plus que dans cet exercice.)
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+Les valeurs falsy sont celles que JavaScript considère comme fausses dans une condition.
+La liste complète : false, 0, -0, 0n (BigInt zéro), "" (texte vide), null, undefined et NaN.
+Il y en a plus que dans l'exercice car -0 et 0n s'ajoutent à 0.
+Toutes les autres valeurs sont truthy, y compris "0", " " (espace), [] et {}.
 ...
 
 **Mon test dans la console :**
+console.log(Boolean(0));      resultat : false
+console.log(Boolean(""));     resultat : false
+console.log(Boolean(null));   resultat : false
+console.log(Boolean("0"));    resultat : true
+console.log(Boolean([]));     rsultat :  true
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Glossary/Falsy
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt : Quelle est la liste complète des valeurs falsy en JavaScript ? (Indice : il y en a plus que dans cet exercice.)
+vérifié sur MDN
 
 ## M4 — Le score par défaut : || contre ??
 
