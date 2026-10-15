@@ -28,12 +28,12 @@ résultat : "object"
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée : chatGPT
 Prompt : Pourquoi typeof null renvoie-t-il 'object' alors que null n'est pas un objet ?
-vérification MDN : null représente l'absence volontaire de
-valeur et n'est pas un objet.
+vérification MDN : vérifié sur MDN
 
 ## F2 — Le convertisseur de saisie
 
@@ -62,7 +62,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Na
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 oui claude
 prompt : Qu'est-ce que NaN, et pourquoi NaN === NaN renvoie false ? Quelle fonction utiliser pour le détecter ?
-vérification : c'est la même chose
+vérification : vérifié sur MDN
 
 ## F3 — Pair ou impair : le tirage des tickets
 
@@ -92,7 +92,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Remaind
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée ? oui claude
 prompt : Que renvoie -7 % 2 ? Déduis-en pourquoi il vaut mieux tester % 2 !== 0 plutôt que % 2 === 1 pour détecter un nombre impair.
-vérification: c'est la même réponse sur mdn
+vérification: vérifié sur MDN
 
 ## F4 — Le contrôleur du bus
 
@@ -121,6 +121,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditi
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée ? oui claude
 prompt :  Peut-on enchaîner plusieurs ternaires ? Pourquoi est-ce souvent déconseillé ?
+vérifié sur MDN
 
 ## F5 — Ma première fonction fléchée
 
@@ -154,7 +155,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_f
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utlisée ? oui claude
 prompt :  Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on enlever return et les accolades ?
- vérification sur MDN : même réponse
+ vérification sur MDN : vérifié sur MDN 
 
 
 
@@ -192,7 +193,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/break
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée ? oui claude
 prompt : À quoi sert le mot-clé continue ? Quelle différence avec break ?
- vérification sur MDN : réponse identique
+ vérification sur MDN : vérifié sur MDN
 
 
 ## M1 — FizzBuzz kinois
@@ -200,36 +201,66 @@ prompt : À quoi sert le mot-clé continue ? Quelle différence avec break ?
 **Question :** Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeurs ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+FizzBuzz est célèbre car c'est un exercice très simple qui permet de vérifier vite si un candidat sait vraiment programmer.
+Il demande de maîtriser une boucle, le modulo (%) et les conditions if / else if.
+Le piège est l'ordre des conditions : il faut tester les multiples de 3 et de 5 en premier, sinon le message combiné n'apparaît jamais.
+Beaucoup de candidats échouent sur ce détail, d'où sa popularité en entretien.
 
 ...
 
 **Mon test dans la console :**
+for (let i = 1; i <= 15; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("MalewaWewa");
+  } else if (i % 5 === 0) {
+    console.log("Wewa");
+  } else if (i % 3 === 0) {
+    console.log("Malewa");
+  } else {
+    console.log(i);
+  }
+}
+resultat :  1, 2, Malewa, 4, Wewa, Malewa, 7, 8, Malewa, Wewa, 11, Malewa, 13, 14, MalewaWewa
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+wikipedia
+https://en.wikipedia.org/wiki/Fizz_buzz
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt : Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeurs ?
 
 ## M2 — Le distributeur automatique (DAB)
 
 **Question :** Comment afficher 75000 sous la forme 75 000 avec toLocaleString() ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+toLocaleString() convertit un nombre en texte selon les habitudes d'une langue ou d'un pays.
+En lui donnant 'fr-FR', il sépare les milliers par un espace : 75000 devient 75 000.
+On l'écrit ainsi : (75000).toLocaleString('fr-FR').
+Le résultat est du texte (string), plus un nombre.
 ...
 
 **Mon test dans la console :**
+const montant = 75000;
+console.log(montant.toLocaleString('fr-FR')); resultat :  75 000
+console.log(montant.toLocaleString('en-US')); resultat :  75,000
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? oui claude
+prompt : Comment afficher 75000 sous la forme 75 000 avec toLocaleString() ?
+vérifié sur MDN
 
 ## M3 — Le détecteur de champs vides (Truthy / Falsy)
 
