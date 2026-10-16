@@ -402,18 +402,41 @@ IA utilisée ? NON
 **Question :** Cite tous les opérateurs d'affectation composée (+=, -=…) et donne un exemple pour chacun.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+Les opérateurs d'affectation composée raccourcissent x = x opérateur y en x opérateur= y. Il y en a 15 : +=, -=, =, /=, %=, *=, <<=, >>=, >>>=, &=, |=, ^=, &&=, ||= et ??=. »
 ...
 
 **Mon test dans la console :**
+let x;
+
+x = 5;   x += 3;    console.log(x); // 8    (addition)
+x = 5;   x -= 2;    console.log(x); // 3    (soustraction)
+x = 5;   x *= 2;    console.log(x); // 10   (multiplication)
+x = 10;  x /= 2;    console.log(x); // 5    (division)
+x = 10;  x %= 3;    console.log(x); // 1    (reste)
+x = 2;   x **= 3;   console.log(x); // 8    (exponentiation : 2 puissance 3)
+
+x = 5;   x <<= 1;   console.log(x); // 10   (décalage à gauche)
+x = 5;   x >>= 1;   console.log(x); // 2    (décalage à droite)
+x = 5;   x >>>= 1;  console.log(x); // 2    (décalage à droite non signé)
+x = 5;   x &= 3;    console.log(x); // 1    (ET binaire)
+x = 5;   x |= 3;    console.log(x); // 7    (OU binaire)
+x = 5;   x ^= 3;    console.log(x); // 6    (OU exclusif binaire)
+
+x = 1;    x &&= 5;  console.log(x); // 5    (ET logique : affecte si x est truthy)
+x = 0;    x ||= 10; console.log(x); // 10   (OU logique : affecte si x est falsy)
+x = null; x ??= 7;  console.log(x); // 7    (coalescence des nuls : affecte si x est null ou undefined)
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+Liste de tous les opérateurs d'affectation : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators
+Page de -= (avec exemples) : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Subtraction_assignment
+Page de &= (avec exemples) : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Bitwise_AND_assignment
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utlisée? non
 
 ## M8 — La batterie qui se décharge
 
