@@ -480,18 +480,33 @@ vérification sur MDN : La condition d'un do...while est testée après l'exécu
 **Question :** Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() est un piège si on veut continuer à calculer ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+JavaScript stocke les nombres décimaux en binaire (64 bits, norme IEEE 754). Certaines décimales, comme 0.1 et 0.2, ne tombent pas juste en binaire, un peu comme 1/3 donne 0,333… en décimal. L'ordinateur les arrondit donc légèrement, et 0.1 + 0.2 donne 0.30000000000000004 au lieu de 0.3. toFixed() est un piège pour continuer à calculer parce qu'il renvoie une chaîne de caractères (string) et non un nombre. Si on additionne ensuite cette chaîne avec un nombre, JavaScript concatène au lieu d'additionner. Il faut la reconvertir avec Number().
 ...
 
 **Mon test dans la console :**
+console.log(0.1 + 0.2);                 resultat :  0.30000000000000004
+console.log(0.1 + 0.2 === 0.3);         resultat : false
+
+const somme = (0.1 + 0.2).toFixed(2);
+console.log(somme);                     resultat : "0.30"
+console.log(typeof somme);              resultat : string
+console.log(somme + 1);                 resultat : "0.301" (concaténation, pas une addition)
+console.log(Number(somme) + 1);         resultat : 1.3 (correct après conversion)
+
+console.log(Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON); // true (bonne façon de comparer)
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+MDN, page toFixed() : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+Explication de 0.1 + 0.2 : https://explainthis.io/en/swe/js-zero-point-one-plus-zero-point-two
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? OUI claude
+prompt : Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() est un piège si on veut continuer à calculer ?
+
 
 ## A2 — Le moteur de paie v2
 
