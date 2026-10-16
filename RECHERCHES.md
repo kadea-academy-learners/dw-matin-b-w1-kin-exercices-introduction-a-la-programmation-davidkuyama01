@@ -378,18 +378,24 @@ Le hoisting correspond au déplacement de la déclaration de fonctions, variable
 **Question :** Le troisième bug vient de l'« insertion automatique de point-virgule » (ASI). Explique ce mécanisme en 3 lignes.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+L'insertion automatique de point-virgule (ASI) est un mécanisme de JavaScript qui ajoute lui-même les ; manquants à la fin des lignes. Il s'applique aussi après return : si la valeur est sur la ligne suivante, JavaScript lit return; et renvoie undefined. Pour l'éviter, on écrit la valeur sur la même ligne que return (ou on l'entoure de parenthèses) et on met toujours les ;.
 ...
 
 **Mon test dans la console :**
+console.log(doubler(4)); resultat : 8
+console.log(total);      resultat : 660
+console.log(saluer('Ney')); resultat : Mbote Ney
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+Page return : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/return
+Page Grammaire lexicale : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Grammaire_lexicale
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? NON 
 
 ## M7 — La tirelire numérique
 
