@@ -22,4 +22,44 @@ Comment classer le bulletin de la meilleure à la moins bonne moyenne avec .sort
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
+const promo = [
+  { nom: "Amani", notes: [14, 16, 15] },
+  { nom: "Bijou", notes: [17, 18, 16] },
+  { nom: "Christian", notes: [8, 11, 9] },
+  { nom: "Divine", notes: [12, 10, 14] },
+  { nom: "Exaucé", notes: [16, 15, 19] },
+];
 
+// 2. Moyenne avec une boucle et un accumulateur, arrondie à une décimale
+const calculerMoyenne = (notes) => {
+  let somme = 0;
+  for (let i = 0; i < notes.length; i++) {
+    somme += notes[i];
+  }
+  return Math.round((somme / notes.length) * 10) / 10;
+};
+
+// 3. map : bulletin avec nom, moyenne et mention
+const bulletin = promo.map((eleve) => {
+  const moyenne = calculerMoyenne(eleve.notes);
+  let mention;
+  if (moyenne >= 16) {
+    mention = "Excellent";
+  } else if (moyenne >= 10) {
+    mention = "Admis";
+  } else {
+    mention = "Rattrapage";
+  }
+  return { nom: eleve.nom, moyenne, mention };
+});
+console.log(`Moyennes : ${bulletin.map((eleve) => eleve.moyenne).join(", ")}`);
+
+// 4. filter : compter les admis, find : premier Excellent
+const admis = bulletin.filter((eleve) => eleve.mention === "Excellent" || eleve.mention === "Admis");
+console.log(`${admis.length} admis`);
+
+const premierExcellent = bulletin.find((eleve) => eleve.mention === "Excellent");
+console.log(`Premier Excellent : ${premierExcellent.nom}`);
+
+// 5. Affichage en tableau
+console.table(bulletin);

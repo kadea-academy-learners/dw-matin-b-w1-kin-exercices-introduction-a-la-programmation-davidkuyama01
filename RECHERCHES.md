@@ -579,18 +579,42 @@ Si aucun élément ne passe le test, filter() renvoie un tableau vide.
 **Question :** Comment classer le bulletin de la meilleure à la moins bonne moyenne avec .sort() ? Pourquoi .sort() modifie-t-il le tableau d'origine, et comment l'éviter ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+Pour classer de la meilleure à la moins bonne moyenne, on utilise .sort() avec une fonction de comparaison : bulletin.sort((a, b) => b.moyenne - a.moyenne). Si b - a est positif, b passe devant a, donc l'ordre est décroissant. .sort() modifie le tableau d'origine : il trie « en place » et renvoie une référence vers ce même tableau, pas une copie. Pour l'éviter, on trie une copie : [...bulletin].sort(...), ou bulletin.toSorted(...) qui renvoie un nouveau tableau.
 
 ...
 
 **Mon test dans la console :**
+const classement = [...bulletin].sort((a, b) => b.moyenne - a.moyenne);
+console.log(classement.map((eleve) => eleve.nom).join(", "));
+// Bijou, Exaucé, Amani, Divine, Christian
+
+console.log(bulletin.map((eleve) => eleve.nom).join(", "));
+// Amani, Bijou, Christian, Divine, Exaucé (le tableau d'origine n'a pas changé)
+
+// Preuve que sort() modifie l'original quand on ne copie pas :
+const mauvais = bulletin.sort((a, b) => b.moyenne - a.moyenne);
+console.log(mauvais === bulletin); // true (même tableau)
+console.log(bulletin.map((eleve) => eleve.nom).join(", "));
+// Bijou, Exaucé, Amani, Divine, Christian (l'original est trié)
+
+// Sans fonction de comparaison, les nombres sont triés comme du texte :
+console.log([10, 9, 1].sort()); // [1, 10, 9]
+
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+sort() : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ?  OUI claude
+prompt :  Comment classer le bulletin de la meilleure à la moins bonne moyenne avec .sort() ? Pourquoi .sort() modifie-t-il le tableau d'origine, et comment l'éviter ?
+vérification sur MDN : sort() trie les éléments d'un tableau en place et retourne la référence vers ce même tableau, désormais trié.  
+Pour comparer des nombres plutôt que des chaînes, la fonction de comparaison peut soustraire b à a.  
+On peut aussi faire une copie superficielle avant d'appeler sort(), avec l'opérateur de propagation ou Array.from().  
+
 
 ## A5 — Le nombre mystère
 
