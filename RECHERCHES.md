@@ -621,15 +621,30 @@ On peut aussi faire une copie superficielle avant d'appeler sort(), avec l'opér
 **Question :** Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+La recherche dichotomique consiste à couper le problème en deux à chaque essai : on propose toujours le nombre du milieu de l'intervalle restant. Si la réponse est « plus grand », on garde la moitié haute, sinon la moitié basse. L'intervalle est divisé par 2 à chaque essai : 100 → 50 → 25 → 12 → 6 → 3 → 2 → 1. Avec 7 essais, on peut départager 2⁷ = 128 nombres, ce qui couvre largement 1 à 100. Avec 6 essais, on n'en couvre que 64, ce qui ne suffit pas toujours. C'est pourquoi 7 essais suffisent toujours.
 
 ...
 
 **Mon test dans la console :**
+console.log(pire);              // 7 (le pire cas)
+
+// Pièges de la saisie
+console.log(Number("abc"));     // NaN
+console.log(Number(""));        // 0 (piège : un champ vide ressemble à un nombre)
+console.log(Number(null));      // 0 (piège : le bouton Annuler)
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+MDN, prompt() : https://developer.mozilla.org/fr/docs/Web/API/Window.prompt
+Dichotomie (article de l'IREM de Nantes) : https://bibnum.publimath.fr/IWR/IWR16005.pdf
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utlisée ? oui claude 
+prompt :  Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours pour trouver un nombre entre 1 et 100.
+vérification sur MDN : prompt() renvoie le texte saisi, ou null si l'utilisateur annule.  (mozilla)
+Le résultat de prompt() est une chaîne de caractères, donc il faut parfois le convertir, par exemple avec Number().  (mozilla)
+La dichotomie consiste à couper un problème en deux, et pour un nombre d'étages égal à une puissance de 2, le nombre de tests effectués est égal au logarithme en base 2 de ce nombre.
+
