@@ -443,18 +443,37 @@ IA utlisée? non
 **Question :** Quelle est la différence entre while et do...while ? Que donnerait l'étape 4 avec un do...while ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+La boucle while teste la condition avant chaque tour. Si la condition est fausse dès le départ, le bloc ne s'exécute jamais. La boucle do...while exécute d'abord le bloc, puis teste la condition après, donc elle fait au moins un tour, même si la condition est fausse.
+Pour l'étape 4 (départ à 15 %) :
+Avec while : 15 > 20 est faux, donc 0 tour. La batterie reste à 15 % et le compteur à 0 h.
+Avec do...while : le bloc s'exécute une fois (15 − 15 = 0 %, 1 h), puis 0 > 20 est faux et la boucle s'arrête. Résultat : 1 tour, batterie à 0 %, après 1 h.
 
 ...
 
 **Mon test dans la console :**
+let batterie = 15;
+let compteurHeure = 0;
+
+do {
+  batterie -= 15;
+  compteurHeure++;
+} while (batterie > 20);
+
+console.log(Après ${compteurHeure} h, batterie à ${batterie} % : branche ton téléphone !);
+// Après 1 h, batterie à 0 % : branche ton téléphone !
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/do...while
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée claude ?  oui 
+prompt : Quelle est la différence entre while et do...while ? Que donnerait l'étape 4 avec un do...while ?
+vérification sur MDN : La condition d'un do...while est testée après l'exécution de l'instruction, donc le bloc est exécuté au moins une fois.
+
 
 ## A1 — Kadea Express v2 : le calculateur de livraison
 
