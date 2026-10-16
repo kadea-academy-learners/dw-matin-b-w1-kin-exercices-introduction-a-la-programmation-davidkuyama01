@@ -506,6 +506,9 @@ Explication de 0.1 + 0.2 : https://explainthis.io/en/swe/js-zero-point-one-plus-
 **IA utilisée ? (prompt + vérification sur MDN) :** non
 IA utilisée ? OUI claude
 prompt : Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi toFixed() est un piège si on veut continuer à calculer ?
+vérification sur MDN : toFixed() renvoie une chaîne de caractères qui représente le nombre avec une notation à point fixe.  (mozilla)
+Ce résultat étrange vient du fait que JavaScript utilise des nombres binaires à virgule flottante en double précision sur 64 bits (IEEE 754), comme la plupart des langages. 
+
 
 
 ## A2 — Le moteur de paie v2
@@ -513,18 +516,30 @@ prompt : Pourquoi 0.1 + 0.2 ne donne-t-il pas 0.3 en JavaScript ? Et pourquoi to
 **Question :** La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et réécris l'étape 2 avec elle.
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+La méthode .reduce() parcourt un tableau et le réduit à une seule valeur (un total, un maximum, etc.). Elle appelle une fonction pour chaque élément. Cette fonction reçoit l'accumulateur (le résultat gardé depuis le tour précédent) et l'élément courant. Ce qu'elle renvoie devient l'accumulateur du tour suivant. Le deuxième argument de reduce est la valeur de départ de l'accumulateur (ici 0). Contrairement à forEach, il n'y a pas besoin de variable let total à l'extérieur : reduce renvoie directement le résultat.
 
 ...
 
 **Mon test dans la console :**
+Étape 2 réécrite avec .reduce() :
+const heuresSemaine = [8, 9, 10, 8, 7, 6];
+
+const total = heuresSemaine.reduce((accumulateur, heures) => accumulateur + heures, 0);
+console.log(total); // 48
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? OUI claude
+prompt : La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et réécris l'étape 2 avec elle.
+vérification sur MDN : educe() applique une fonction « accumulateur » à chaque valeur du tableau, de gauche à droite, pour la réduire à une seule valeur.  (mozilla)
+Au premier appel, l'accumulateur vaut la valeur initiale si elle est fournie, sinon le premier élément du tableau. 
+
 
 ## A3 — L'inventaire en console
 
