@@ -546,18 +546,33 @@ Au premier appel, l'accumulateur vaut la valeur initiale si elle est fournie, si
 **Question :** Comment afficher seulement les colonnes nom et stock avec console.table() ? Et que renvoient .find() et .filter() quand rien ne correspond ?
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
+Pour afficher seulement les colonnes nom et stock, on passe un deuxième argument à console.table() : un tableau avec les noms des colonnes, par exemple console.table(produits, ["nom", "stock"]). Quand rien ne correspond, .find() renvoie undefined, alors que .filter() renvoie un tableau vide []. Il faut donc tester undefined après un find, tandis qu'après un filter on regarde plutôt .length === 0.
 
 ...
 
 **Mon test dans la console :**
+console.table(produits, ["nom", "stock"]);          // seulement 2 colonnes (+ la colonne (index))
+console.log(produits.find((produit) => produit.id === 999));          // undefined
+console.log(produits.filter((produit) => produit.categorie === "Vêtements")); // []
+console.log(produits.filter((produit) => produit.categorie === "Vêtements").length); // 0
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+[18:27, 16/10/2026] david maestro😎: .length === 0.
+[18:28, 16/10/2026] david maestro😎: console.table() : https://developer.mozilla.org/fr/docs/Web/API/console/table
+find() : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/find
+filter() : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée ? OUI claude 
+prompt : Comment afficher seulement les colonnes nom et stock avec console.table() ? Et que renvoient .find() et .filter() quand rien ne correspond ?
+ vérification sur MDN : Le paramètre facultatif columns de console.table() permet de ne choisir qu'un sous-ensemble de colonnes à afficher.  
+Si la fonction de test ne renvoie jamais de valeur vraie, find() retourne undefined.  
+Si aucun élément ne passe le test, filter() renvoie un tableau vide.  
+
 
 ## A4 — Le classement de la promo
 

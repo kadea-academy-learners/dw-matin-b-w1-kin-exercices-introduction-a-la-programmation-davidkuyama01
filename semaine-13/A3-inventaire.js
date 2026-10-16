@@ -29,5 +29,41 @@ Comment afficher seulement les colonnes nom et stock avec console.table() ? Et q
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
+ const produits = [
+  { id: 101, nom: "Clé USB 32 Go", categorie: "Informatique", prixFC: 14000, stock: 25 },
+  { id: 102, nom: "Sac à dos Kadea", categorie: "Accessoires", prixFC: 42000, stock: 0 },
+  { id: 103, nom: "Souris sans fil", categorie: "Informatique", prixFC: 28000, stock: 12 },
+  { id: 104, nom: "Gourde isotherme", categorie: "Accessoires", prixFC: 21000, stock: 8 },
+  { id: 105, nom: "Casque audio", categorie: "Informatique", prixFC: 70000, stock: 0 },
+  { id: 106, nom: "Carnet de notes", categorie: "Papeterie", prixFC: 7000, stock: 40 },
+];
+
+// 2. Affichage en tableau
+console.table(produits);
+
+// 3. filter : garder la catégorie Informatique
+const informatique = produits.filter((produit) => produit.categorie === "Informatique");
+console.log(`${informatique.length} produits Informatique (${informatique.map((produit) => produit.id).join(", ")})`);
+
+// 4. map : ajouter prixUSD arrondi
+const TAUX = 2800; // taux fictif
+const produitsAvecUsd = produits.map((produit) => ({
+  ...produit,
+  prixUSD: Math.round(produit.prixFC / TAUX),
+}));
+console.log(`Prix USD : ${produitsAvecUsd.map((produit) => produit.prixUSD).join(", ")}`);
+
+// 5. find : chercher un produit, gérer le cas undefined
+const chercherProduit = (id) => {
+  const produit = produits.find((element) => element.id === id);
+  return produit === undefined ? "Produit introuvable" : produit;
+};
+console.log(chercherProduit(104));
+console.log(chercherProduit(999));
+
+// 6. Produits en rupture de stock
+const enRupture = produits.filter((produit) => produit.stock === 0);
+console.log(`${enRupture.length} produits en rupture`);
+
 
 
