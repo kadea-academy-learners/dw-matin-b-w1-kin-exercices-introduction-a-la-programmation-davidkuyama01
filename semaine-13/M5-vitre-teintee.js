@@ -36,17 +36,25 @@ Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fo
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 
 // Mes prédictions (avant d'exécuter) :
-//
+// - console.log(ville) dans le if affichera "Kinshasa".
+// - console.log(commune) hors du if plantera : ReferenceError, car commune (const) n'existe que dans le bloc.
+// - Comme le programme s'arrête à cette erreur, la suite (afficher, secret) ne sera jamais atteinte.
+// - Même problème prévu pour secret : il n'existe que dans la fonction.
 
+// Réponse consigne 2 : la fonction afficher ne s'exécute jamais, car le programme plante à la ligne console.log(commune) avant de l'atteindre.
+
+// Code corrigé (déclarations sorties des blocs) :
 const ville = 'Kinshasa';
+let commune; // déclarée dehors, donc visible partout
+
 if (true) {
-  const commune = 'Gombe';
+  commune = 'Gombe'; // on assigne seulement dans le bloc
   console.log(ville);
 }
 console.log(commune);
 
+const secret = 'pondu'; // déclarée dehors, donc visible partout
 const afficher = () => {
-  const secret = 'pondu';
   return secret;
 };
 console.log(afficher());

@@ -329,18 +329,49 @@ vérification : vérifié sur MDN
 **Question :** Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting ».
 
 **Ma réponse (avec mes mots, 3 à 5 lignes) :**
-
+var est banni du code moderne parce qu'il a une portée de fonction et non de bloc. Une variable var déclarée dans un if ou une boucle reste visible partout dans la fonction, ce qui crée des bugs. Il est aussi concerné par le hoisting : la déclaration est remontée en haut, avec la valeur undefined. On peut donc utiliser la variable avant de la déclarer, sans erreur. De plus, var permet de déclarer deux fois le même nom sans avertissement. let et const ont une portée de bloc et interdisent d'utiliser la variable avant sa déclaration
 ...
 
 **Mon test dans la console :**
+// Test 1 : portée de var (fonction) contre let (bloc)
+if (true) {
+  var a = 'visible dehors';
+  let b = 'invisible dehors';
+}
+console.log(a);         // la variable var sort du bloc
+console.log(typeof b);  // let reste dans le bloc
+
+// Test 2 : hoisting de var
+console.log(c);         // utilisée avant sa ligne de déclaration
+var c = 5;
+
+// Test 3 : let avant sa déclaration
+try {
+  console.log(d);
+} catch (erreur) {
+  console.log(erreur.name);
+}
+let d = 5; 
+resultat : visible dehors
+resultat : undefined
+resultat : undefined
+resultat : ReferenceError
 
 ```js
 // colle ici le test que tu as exécuté et le résultat obtenu
 ```
 
 **Source :** 
+var (portée de fonction, remontée, redéclaration) : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/var
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let
+Hoisting (remontée) : https://developer.mozilla.org/fr/docs/Glossaire/Hoisting
 
 **IA utilisée ? (prompt + vérification sur MDN) :** non
+IA utilisée claude
+prompt : Pourquoi var est-il banni du code moderne ? Cherche ce que sont la portée de fonction et le « hoisting »
+vérification sur MDN : confirmation, La portée d'une variable déclarée avec var est la fonction qui contient la déclaration, ou le contexte global si elle est déclarée hors de toute fonction. 
+let déclare une variable dont la portée est celle du bloc courant, alors que var a pour portée la fonction englobante. 
+Le hoisting correspond au déplacement de la déclaration de fonctions, variables ou classes en haut de leur portée avant l'exécution du code. 
 
 ## M6 — Le détective du return
 
