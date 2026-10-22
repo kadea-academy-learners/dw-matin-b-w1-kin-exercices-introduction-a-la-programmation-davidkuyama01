@@ -19,17 +19,20 @@ Pourquoi FizzBuzz est-il célèbre dans les entretiens d'embauche de développeu
 // ===== FIN ÉNONCÉ =====
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
-for (let i = 1; i <= 15; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-        console.log("MalewaWewa");
-    } else if (i % 5 === 0) {
-        console.log("Wewa");
-    } else if(i % 3 === 0) {
-        console.log("Malewa");
 
-    } else {
-        console.log(i);
-    }
+
+for (let i = 1; i <= 30; i++) {
+  // L'ordre est important : on teste d'abord « multiple de 3 ET de 5 ».
+  // Un multiple de 15 est aussi multiple de 3 et de 5 : si on testait
+  // d'abord % 3 ou % 5, on afficherait seulement « Malewa » ou « Wewa »
+  // et le cas « MalewaWewa » ne serait jamais atteint.
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("MalewaWewa");
+  } else if (i % 5 === 0) {
+    console.log("Wewa");
+  } else if (i % 3 === 0) {
+    console.log("Malewa");
+  } else {
+    console.log(i);
+  }
 }
-
-

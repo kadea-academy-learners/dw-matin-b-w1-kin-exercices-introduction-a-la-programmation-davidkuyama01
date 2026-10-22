@@ -21,39 +21,40 @@ La méthode .reduce() n'a pas été vue en atelier. Explique ce qu'elle fait et 
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 const heuresSemaine = [8, 9, 10, 8, 7, 6];
-const joursSemaines = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+const joursSemaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
 
+// 2. Total des heures avec forEach et un accumulateur
 let total = 0;
-
 heuresSemaine.forEach((heures) => {
-    total += heures;
-}
-)
+  total += heures;
+});
+
+// 3. Salaire avec heures supplémentaires (x 1,5 au-delà de 40 h)
 const calculerSalaire = (heures, tauxHoraire = 2500) => {
-    let heuresNormales = heures;
-    let heuresSup = 0;
+  let heuresNormales = heures;
+  let heuresSup = 0;
 
-    if(heures > 40) {
-        heuresNormales = 40;
-        heuresSup = heures - 40;
-    }
-    return heuresNormales * tauxHoraire + heuresSup * tauxHoraire * 1.5;  
-}
-let max = heuresSemaine [0];
+  if (heures > 40) {
+    heuresNormales = 40;
+    heuresSup = heures - 40;
+  }
+
+  return heuresNormales * tauxHoraire + heuresSup * tauxHoraire * 1.5;
+};
+
+// 4. Jour le plus chargé avec une boucle for
 let indexMax = 0;
-
-for(let i = 1; i <= heuresSemaine.length; i++) {
-    if(heuresSemaine[i] > max) {
-        max = heuresSemaine[i];
-        indexMax = i;
-    }
-
+for (let i = 1; i < heuresSemaine.length; i++) {
+  if (heuresSemaine[i] > heuresSemaine[indexMax]) {
+    indexMax = i;
+  }
 }
-console.log(`${total} h - ${calculerSalaire(total)} ; jour le plus chargé : ${joursSemaines[indexMax]} ${max} h`);
 
-
-
-
+const salaire = calculerSalaire(total);
+console.log(`
+  Total : ${total} h - Salaire : ${salaire} FC ; jour le plus chargé : ${joursSemaine[indexMax]} (${heuresSemaine[indexMax]} h).`
+);
+// Total : 48 h - Salaire : 130000 FC ; jour le plus chargé : mercredi (10 h).
 
 
 

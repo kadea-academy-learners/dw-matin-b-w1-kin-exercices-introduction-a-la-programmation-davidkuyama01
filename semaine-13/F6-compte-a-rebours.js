@@ -20,14 +20,20 @@ Recherche (à rédiger dans RECHERCHES.md) :
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 for (let i = 10; i >= 1; i--) {
-   
-    if (i % 5 === 0) {
-        continue;
-    } console.log(i);
-
+  if (i === 5) {
+    continue;
+  }
+  console.log(i);
 }
- console.log("Décollage !");
+console.log("Décollage !");
+// Résultat : 10, 9, 8, 7, 6, 4, 3, 2, 1, Décollage !
 
-
-
+// Étape 2 : seulement les nombres pairs
+for (let i = 10; i >= 1; i--) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+console.log("Décollage !");
+// Résultat : 10, 8, 6, 4, 2, Décollage !
 
