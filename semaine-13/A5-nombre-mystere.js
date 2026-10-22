@@ -22,18 +22,17 @@ Explique la « recherche dichotomique » et pourquoi 7 essais suffisent toujours
 
 // ✍️ Ton code ici 👇 (règles : const/let, ===, gabarits littéraux, fonctions fléchées, camelCase)
 const maxEssais = 7;
-
-// 1. Nombre entier aléatoire entre 1 et 100
 const nombreMystere = Math.floor(Math.random() * 100) + 1;
 
 let essais = 0;
 let trouve = false;
 
-// 2. Tant que le joueur n'a pas trouvé et qu'il lui reste des essais
 while (!trouve && essais < maxEssais) {
-  const saisie = prompt(`Devine le nombre entre 1 et 100 (essai ${essais + 1}/${maxEssais})`);
+  const saisie = prompt(
+    `Devine le nombre entre 1 et 100 (essai ${essais + 1}/${maxEssais})`
+  );
 
-  // Bouton Annuler : prompt() renvoie null, on arrête proprement
+  // Bouton Annuler : prompt() renvoie null
   if (saisie === null) {
     console.log("Partie annulée.");
     break;
@@ -41,27 +40,26 @@ while (!trouve && essais < maxEssais) {
 
   const proposition = Number(saisie);
 
-  // 3. Saisie refusée : texte, ou champ vide (Number("") vaut 0 !). L'essai n'est pas compté.
+  // Saisie invalide (« abc », vide) : on refuse sans compter l'essai
   if (saisie.trim() === "" || Number.isNaN(proposition)) {
-    console.log(`${saisie} n'est pas un nombre : essai non compté.`);
+    console.log("Ce n'est pas un nombre, réessaie !");
     continue;
   }
 
   essais++;
 
-  // 4. Réponses
   if (proposition === nombreMystere) {
     trouve = true;
-    console.log(`Trouvé en ${essais} essai${essais > 1 ? "s" : ""} !`);
+    console.log(`Trouvé en ${essais} essais !`);
   } else if (proposition < nombreMystere) {
-    console.log("Plus grand");
+    console.log("Plus grand !");
   } else {
-    console.log("Plus petit");
+    console.log("Plus petit !");
   }
 }
 
-// 5. Essais épuisés : révéler le nombre
-if (!trouve && essais === MAX_ESSAIS) {
+// Essais épuisés sans avoir trouvé
+if (!trouve && essais === maxEssais) {
   console.log(`Perdu ! Le nombre était ${nombreMystere}.`);
 }
 
