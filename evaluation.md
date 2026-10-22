@@ -1,10 +1,10 @@
 # 📊 Évaluation automatique — Semaine 13 (JavaScript)
 
-> Générée le 2026-10-16 17:11 UTC · commit `467bf28` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
+> Générée le 2026-10-22 15:21 UTC · commit `7081fa6` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
 
-## Note finale : **10 / 15**
+## Note finale : **11 / 15**
 
-Exercices : **70 / 95** · Parfaits : 6 / 19 · Non rendus : 0
+Exercices : **77 / 95** · Parfaits : 8 / 19 · Non rendus : 0
 
 ## 1. Résultat par exercice
 
@@ -12,7 +12,7 @@ Exercices : **70 / 95** · Parfaits : 6 / 19 · Non rendus : 0
 |---|:-:|---|:-:|:-:|:-:|---|
 | **F1** — Ma carte d'apprenant | **4** | 🟡 Règles non respectées | 5/5 | 3 | ✅ | Le résultat est bon, mais les règles ne sont pas toutes respectées : const par défaut, justification en commentaire, un seul gabarit littéral.<br>• `let` jamais réassigné : `age`, `commune`, `estInscrit`, `ancienneFormation` → utilise `const`.<br>• Justifie en commentaire le choix de `const` ou `let` pour tes variables.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F2** — Le convertisseur de saisie | **4** | 🟡 Règles non respectées | 3/3 | 3 | ✅ | Résultat correct, mais il manque une notion imposée : Number() ou tes explications/prédictions en commentaire.<br>• Explique en commentaire pourquoi le résultat est faux et note tes prédictions avant de tester.<br>📚 Recherche complète, testée et sourcée (MDN). |
-| **F3** — Pair ou impair : le tirage des tickets | **2** | 🟠 Résultat incorrect | 1/3 | 3 | ✅ | Le lot affiché est faux pour au moins un ticket : un nombre est pair si `n % 2 === 0` (0 compris).<br>• Avec 24, on attend « Ticket 24 : pair, tu gagnes un tote bag. »<br>• 0 est pair : avec 0, on attend « Ticket 0 : pair, tu gagnes un tote bag. »<br>• Aucun gabarit littéral avec `${...}` : construis tes messages avec des backticks.<br>📚 Recherche complète, testée et sourcée (MDN). |
+| **F3** — Pair ou impair : le tirage des tickets | **5** | ✅ Parfait | 3/3 | 3 | ✅ | Parfait ! Modulo et égalité stricte maîtrisés, les cas 17, 24 et 0 sont corrects.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F4** — Le contrôleur du bus | **4** | 🟡 Règles non respectées | 5/5 | 3 | ✅ | Le calcul est juste, mais il faut un ternaire pour le statut, un `if / else if / else` pour le tarif et un gabarit littéral.<br>• `let` jamais réassigné : `statut` → utilise `const`.<br>• Message construit avec `+` (ligne 38) : utilise un gabarit littéral `...${x}...`.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F5** — Ma première fonction fléchée | **3** | 🟠 Résultat incorrect | 3/4 | 3 | ✅ | Les fonctions ne renvoient pas le bon résultat : saluer('Lys') doit renvoyer « Mbote Lys ! » et carre(7) doit renvoyer 49 (avec return).<br>• `carre(-3)` renvoie -21 au lieu de 9.<br>• Message construit avec `+` (ligne 27, 27) : utilise un gabarit littéral `...${x}...`.<br>• Écris `saluer` sur une seule ligne avec retour implicite (sans accolades ni return).<br>• `saluer` doit utiliser un gabarit littéral.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F6** — Le compte à rebours | **2** | 🟠 Résultat incorrect | 0/2 | 3 | ✅ | La séquence affichée est fausse : vérifie le départ (10), la condition (>= 1), le pas et le saut du 5.<br>• On attend 10, 9, 8, 7, 6, 4, 3, 2, 1, Décollage ! (le 5 est sauté).<br>• La version qui affiche seulement les pairs (10, 8, 6, 4, 2) est absente.<br>📚 Recherche complète, testée et sourcée (MDN). |
@@ -21,7 +21,7 @@ Exercices : **70 / 95** · Parfaits : 6 / 19 · Non rendus : 0
 | **M3** — Le détecteur de champs vides (Truthy / Falsy) | **4** | 🟡 Règles non respectées | 11/11 | 3 | ✅ | `estRempli` donne les bons résultats, mais elle doit être fléchée, utiliser un ternaire et aucune comparaison.<br>• Note tes prédictions en commentaire avant de tester.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **M4** — Le score par défaut : \|\| contre ?? | **5** | ✅ Parfait | 5/5 | 3 | ✅ | Parfait ! Le piège de `0 \|\| 'aucun'` est expliqué et corrigé à bon escient avec `??`.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **M5** — La vitre teintée (portée de bloc) | **4** | 🟡 Règles non respectées | 3/3 | 3 | ✅ | Plus d'erreur, mais les déclarations doivent rester dans leurs blocs et tes prédictions/explications doivent être en commentaire.<br>• Ne déplace pas la déclaration de `commune` : elle doit rester dans le bloc if.<br>• Ne déplace pas la déclaration de `secret` : elle doit rester dans `afficher`.<br>📚 Recherche complète, testée et sourcée (MDN). |
-| **M6** — Le détective du return | **1** | ❌ Erreur d'exécution | — | 3 | ✅ | Ton code s'arrête sur une erreur : lis le message, corrige la ligne indiquée et relance ton fichier avec node.<br>• SyntaxError: Unexpected token (ligne 53)<br>📚 Recherche complète, testée et sourcée (MDN). |
+| **M6** — Le détective du return | **5** | ✅ Parfait | 5/5 | 3 | ✅ | Parfait ! return et console.log sont bien distingués, le piège de l'ASI est corrigé et expliqué.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **M7** — La tirelire numérique | **5** | ✅ Parfait | 3/3 | 3 | ✅ | Parfait ! Accumulateur bien initialisé, 12 tours exacts et bonus toutes les 4 semaines : 27000 FC.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **M8** — La batterie qui se décharge | **5** | ✅ Parfait | 3/3 | 3 | ✅ | Parfait ! Boucle while avec condition d'arrêt sûre et compteur : 6 h, 10 %.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **A1** — Kadea Express v2 : le calculateur de livraison | **5** | ✅ Parfait | 9/9 | 3 | ✅ | Parfait ! Règles métier, paramètre par défaut, TVA et arrondi corrects, y compris aux bornes.<br>📚 Recherche complète, testée et sourcée (MDN). |
@@ -35,11 +35,11 @@ Exercices : **70 / 95** · Parfaits : 6 / 19 · Non rendus : 0
 | Critère | Niveau | Points /3 | Feedback |
 |---|---|:-:|---|
 | Fondations : variables, types primitifs et conversions | Compétent : Satisfaisant (84 %) | **2** | Déclarations correctes avec const / let, aucun var. Les 5 types primitifs sont reconnus. Le piège '5' + 3 est identifié et corrigé avec Number().<br>_Preuves : F1, F2, M3_ |
-| Logique conditionnelle et opérateurs | Compétent : Satisfaisant (74 %) | **2** | if / else if / else corrects, égalité stricte === systématique, modulo maîtrisé (pair / impair, multiples). Ternaire simple fonctionnel.<br>_Preuves : F3, F4, M1, M2, M4_ |
-| Fonctions, return et portée | En développement : À améliorer (64 %) | **1** | Confusion entre return et console.log() qui produit des undefined ou des NaN en chaîne. Fonctions appelées sans () ou avec les arguments dans le désordre.<br>_Preuves : F5, M2, M5, M6_ |
+| Logique conditionnelle et opérateurs | Compétent : Satisfaisant (84 %) | **2** | if / else if / else corrects, égalité stricte === systématique, modulo maîtrisé (pair / impair, multiples). Ternaire simple fonctionnel.<br>_Preuves : F3, F4, M1, M2, M4_ |
+| Fonctions, return et portée | Compétent : Satisfaisant (80 %) | **2** | Les fonctions renvoient leur résultat avec return (pas de console.log à l'intérieur) et sont appelées avec les bons arguments. Portée de bloc respectée : aucune ReferenceError.<br>_Preuves : F5, M2, M5, M6_ |
 | Boucles, accumulateurs et méthodes de tableau | Compétent : Satisfaisant (75 %) | **2** | Boucle for correcte (départ, condition, pas), accumulateur initialisé avant la boucle, while avec une condition d'arrêt sûre. Résultats attendus exacts (27000 FC pour M7, 6 h pour M8).<br>_Preuves : F6, M1, M7, M8 ; niveau Avancé : A2, A3, A4, A5_ |
-| Recherche, qualité du code et restitution | Avancé (91 %) | **3** | RECHERCHES.md complet, testé et sourcé (MDN). Commits réguliers et explicites (un par exercice).<br>_Recherches 100 % · commits par exercice 95 % · règles de code 68 %_ |
-| **Total** | | **10 / 15** | |
+| Recherche, qualité du code et restitution | Avancé (93 %) | **3** | RECHERCHES.md complet, testé et sourcé (MDN). Commits réguliers et explicites (un par exercice).<br>_Recherches 100 % · commits par exercice 95 % · règles de code 79 %_ |
+| **Total** | | **11 / 15** | |
 
 ## Comment lire cette évaluation
 
