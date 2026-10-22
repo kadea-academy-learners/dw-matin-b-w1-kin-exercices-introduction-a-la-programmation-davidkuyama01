@@ -1,10 +1,10 @@
 # 📊 Évaluation automatique — Semaine 13 (JavaScript)
 
-> Générée le 2026-10-22 15:48 UTC · commit `f2d2431` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
+> Générée le 2026-10-22 15:51 UTC · commit `3a7808c` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
 
 ## Note finale : **13 / 15**
 
-Exercices : **88 / 95** · Parfaits : 13 / 19 · Non rendus : 0
+Exercices : **87 / 95** · Parfaits : 13 / 19 · Non rendus : 0
 
 ## 1. Résultat par exercice
 
@@ -14,7 +14,7 @@ Exercices : **88 / 95** · Parfaits : 13 / 19 · Non rendus : 0
 | **F2** — Le convertisseur de saisie | **4** | 🟡 Règles non respectées | 3/3 | 3 | ✅ | Résultat correct, mais il manque une notion imposée : Number() ou tes explications/prédictions en commentaire.<br>• Explique en commentaire pourquoi le résultat est faux et note tes prédictions avant de tester.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F3** — Pair ou impair : le tirage des tickets | **5** | ✅ Parfait | 3/3 | 3 | ✅ | Parfait ! Modulo et égalité stricte maîtrisés, les cas 17, 24 et 0 sont corrects.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F4** — Le contrôleur du bus | **4** | 🟡 Règles non respectées | 5/5 | 3 | ✅ | Le calcul est juste, mais il faut un ternaire pour le statut, un `if / else if / else` pour le tarif et un gabarit littéral.<br>• `let` jamais réassigné : `statut` → utilise `const`.<br>• Message construit avec `+` (ligne 38) : utilise un gabarit littéral `...${x}...`.<br>📚 Recherche complète, testée et sourcée (MDN). |
-| **F5** — Ma première fonction fléchée | **3** | 🟠 Résultat incorrect | 3/4 | 3 | ✅ | Les fonctions ne renvoient pas le bon résultat : saluer('Lys') doit renvoyer « Mbote Lys ! » et carre(7) doit renvoyer 49 (avec return).<br>• `saluer('Lys')` renvoie 'Mbote Lys !;' au lieu de Mbote Lys !.<br>📚 Recherche complète, testée et sourcée (MDN). |
+| **F5** — Ma première fonction fléchée | **2** | 🟠 Résultat incorrect | 0/4 | 3 | ✅ | Les fonctions ne renvoient pas le bon résultat : saluer('Lys') doit renvoyer « Mbote Lys ! » et carre(7) doit renvoyer 49 (avec return).<br>• `saluer('Lys')` renvoie undefined au lieu de Mbote Lys !.<br>• `carre(7)` renvoie undefined au lieu de 49.<br>• `carre(-3)` renvoie undefined au lieu de 9.<br>• Affiche saluer('Lys') puis carre(7).<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **F6** — Le compte à rebours | **5** | ✅ Parfait | 2/2 | 3 | ✅ | Parfait ! Les 3 parties de la boucle `for` sont maîtrisées et `continue` est bien placé.<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **M1** — FizzBuzz kinois | **5** | ✅ Parfait | 3/3 | 3 | ✅ | Parfait ! Conditions ordonnées du cas le plus restrictif au plus général, résultat exact de 1 à 30.<br>📚 Recherche complète ; privilégie une source MDN. |
 | **M2** — Le distributeur automatique (DAB) | **5** | ✅ Parfait | 9/9 | 3 | ✅ | Parfait ! Règles vérifiées dans le bon ordre, cas limites gérés, la fonction renvoie son message.<br>📚 Recherche complète, testée et sourcée (MDN). |
@@ -36,7 +36,7 @@ Exercices : **88 / 95** · Parfaits : 13 / 19 · Non rendus : 0
 |---|---|:-:|---|
 | Fondations : variables, types primitifs et conversions | Compétent : Satisfaisant (84 %) | **2** | Déclarations correctes avec const / let, aucun var. Les 5 types primitifs sont reconnus. Le piège '5' + 3 est identifié et corrigé avec Number().<br>_Preuves : F1, F2, M3_ |
 | Logique conditionnelle et opérateurs | Avancé (97 %) | **3** | Conditions ordonnées du cas le plus restrictif au plus général (FizzBuzz, DAB) et cas limites testés (0, négatif, plafond). ?? utilisé à bon escient.<br>_Preuves : F3, F4, M1, M2, M4_ |
-| Fonctions, return et portée | Compétent : Satisfaisant (88 %) | **2** | Les fonctions renvoient leur résultat avec return (pas de console.log à l'intérieur) et sont appelées avec les bons arguments. Portée de bloc respectée : aucune ReferenceError.<br>_Preuves : F5, M2, M5, M6_ |
+| Fonctions, return et portée | Compétent : Satisfaisant (84 %) | **2** | Les fonctions renvoient leur résultat avec return (pas de console.log à l'intérieur) et sont appelées avec les bons arguments. Portée de bloc respectée : aucune ReferenceError.<br>_Preuves : F5, M2, M5, M6_ |
 | Boucles, accumulateurs et méthodes de tableau | Avancé (100 %) | **3** | Boucle adaptée choisie (for / while). Tableaux d'objets traités avec .filter(), .map(), .find() et un return dans chaque callback ; cas undefined de .find() géré ; console.table() utilisé.<br>_Preuves : F6, M1, M7, M8 ; niveau Avancé : A2, A3, A4, A5_ |
 | Recherche, qualité du code et restitution | Avancé (96 %) | **3** | RECHERCHES.md complet, testé et sourcé (MDN). Commits réguliers et explicites (un par exercice).<br>_Recherches 100 % · commits par exercice 95 % · règles de code 89 %_ |
 | **Total** | | **13 / 15** | |
