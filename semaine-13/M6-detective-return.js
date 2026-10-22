@@ -50,6 +50,6 @@ console.log(total);
 // juste après return (ASI), donc la fonction renvoie undefined et le gabarit
 // n'est jamais lu. Il faut mettre la valeur sur la même ligne que return.
 const saluer = (prenom) => {
-  return Mbote ${prenom};
+  return `Mbote ${prenom}`;
 };
 console.log(saluer('Ney'));
