@@ -1,10 +1,10 @@
 # 📊 Évaluation automatique — Semaine 13 (JavaScript)
 
-> Générée le 2026-10-22 15:21 UTC · commit `7081fa6` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
+> Générée le 2026-10-22 15:30 UTC · commit `a9d2a14` · évaluation déterministe basée uniquement sur le cahier d'exercices et le barème.
 
 ## Note finale : **11 / 15**
 
-Exercices : **77 / 95** · Parfaits : 8 / 19 · Non rendus : 0
+Exercices : **79 / 95** · Parfaits : 9 / 19 · Non rendus : 0
 
 ## 1. Résultat par exercice
 
@@ -28,7 +28,7 @@ Exercices : **77 / 95** · Parfaits : 8 / 19 · Non rendus : 0
 | **A2** — Le moteur de paie v2 | **3** | 🟠 Résultat incorrect | 5/7 | 3 | ✅ | Un résultat est faux : seules les heures AU-DELÀ de 40 sont payées × 1,5 (40 × 2500 + 8 × 3750 = 130000) ; le jour le plus chargé est mercredi.<br>• On attend « Total : 48 h ».<br>• On attend « Salaire : 130000 FC ».<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **A3** — L'inventaire en console | **5** | ✅ Parfait | 7/7 | 3 | ✅ | Parfait ! Tableau d'objets maîtrisé avec filter, map et find, cas undefined géré et vérifié avec console.table().<br>📚 Recherche complète, testée et sourcée (MDN). |
 | **A4** — Le classement de la promo | **5** | ✅ Parfait | 9/9 | 3 | ✅ | Parfait ! Fonctions, boucles, conditions et méthodes de tableau bien combinées ; bulletin vérifié avec console.table().<br>📚 Recherche complète, testée et sourcée (MDN). |
-| **A5** — Le nombre mystère | **3** | 🟠 Résultat incorrect | 3/4 | 3 | ❌ | Le jeu ne se comporte pas comme attendu : indices plus grand / plus petit, compteur qui ignore les saisies invalides, arrêt après 7 essais et révélation du nombre.<br>• Le jeu plante quand on perd : ReferenceError: MAX_ESSAIS is not defined.<br>📚 Recherche complète, testée et sourcée (MDN). |
+| **A5** — Le nombre mystère | **5** | ✅ Parfait | 4/4 | 3 | ❌ | Parfait ! Jeu complet et robuste : saisies invalides refusées sans compter l'essai, 7 essais maximum.<br>📚 Recherche complète, testée et sourcée (MDN). |
 
 ## 2. Barème officiel (/15)
 
