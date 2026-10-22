@@ -27,7 +27,7 @@ Quand peut-on enlever les parenthèses autour des paramètres, et quand peut-on 
 // function saluer(prenom) { return 'Mbote ' + prenom + ' !'; }
 
 // 2. Version fléchée avec gabarit littéral, sur une seule ligne
-const saluer = (prenom) => Mbote ${prenom} !;
+const saluer = (prenom) => `Mbote ${prenom} !;`
 
 // 3. Carré d'un nombre
 const carre = (nombre) => nombre * nombre;
